@@ -11,6 +11,6 @@ ENV BITCOIN_DATA=/data
 /bin/sh -c mkdir "$BITCOIN_DATA" 	&& chown -R bitcoin:bitcoin "$BITCOIN_DATA" 	&& ln -sfn "$BITCOIN_DATA" /home/bitcoin/.bitcoin 	&& chown -h bitcoin:bitcoin /home/bitcoin/.bitcoin
 VOLUME [/data]
 COPY file:8032f05a589c63c27eb4f80ad9517940c77a40820daa5314e1d0d35467654360 in /entrypoint.sh 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/run.sh"]
 EXPOSE 18332 18333 8332 8333 9332 9333
 CMD ["bitcoind"]
